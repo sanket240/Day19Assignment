@@ -2,12 +2,12 @@ package EmpWage;
 import java.util.Scanner;
 public class EmployeeWageComputation
 {
-        public static void Refactor()
+        public static void Refactor(String name,int Workingdays,int Workinghours)
         {
                 int IS_FULL_TIME=1;
                 int WAGE_PER_HOUR=20;
                 int FULL_DAY_HOUR=8;
-                int WORKING_DAYS=20;
+                int WORKING_DAYS=Workingdays;
                 int dailyWage=0;
                 int employee_hours=0;
                 int PART_TIME_HOUR=8;
@@ -17,6 +17,8 @@ public class EmployeeWageComputation
                 int days=0;
                 int hours=0;
                 int empHr=0;
+                String n1=name;
+                System.out.println("Name is:"+n1);
                 double empCheck=Math.floor(Math.random()*10)%2;
                 System.out.println("!.Employee Attendance 2.DailyWages 3.Part Time Wages Enter your choice:");
                 Scanner s1=new Scanner(System.in);
@@ -52,7 +54,7 @@ public class EmployeeWageComputation
                 monthlyWage=(WORKING_DAYS*dailyWage);
                 System.out.println("Monthly Wages:"+monthlyWage);
                 System.out.println("DailyWage: MonthlWage:");
-                while(days<=20 && empHr<=100)
+                while(days<=Workingdays && empHr<=Workinghours)
                 {
                         double empCheck1=Math.floor(Math.random()*10)%1;
                         int empCheck2=(int)empCheck1;
@@ -73,9 +75,18 @@ public class EmployeeWageComputation
                         System.out.println(dailyWage + " " + total_Monthly_Wage);
                 }
         }
-	public static void main(String args[])
+        
+        public static void main(String args[])
         {
         	System.out.println("Start");
-        	Refactor();
+        	Scanner s1=new Scanner(System.in);
+        	System.out.println("Enter company name:");
+        	String company=s1.next();
+        	System.out.println("Enter Working Days:");
+        	int days=s1.nextInt();
+        	System.out.println("Enter Working Hours:");
+        	int hrs=s1.nextInt();
+        	Refactor(company,days,hrs);
         }
+        
 }
