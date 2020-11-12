@@ -2,7 +2,7 @@ package EmpWage;
 import java.util.Scanner;
 public class EmployeeWageComputation
 {
-        public static void main (String[] args)
+        public static void Refactor()
         {
                 int IS_FULL_TIME=1;
                 int WAGE_PER_HOUR=20;
@@ -72,5 +72,10 @@ public class EmployeeWageComputation
                         total_Monthly_Wage=(total_Monthly_Wage+dailyWage);
                         System.out.println(dailyWage + " " + total_Monthly_Wage);
                 }
+        }
+	public static void main(String args[])
+        {
+        	System.out.println("Start");
+        	Refactor();
         }
 }
