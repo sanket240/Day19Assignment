@@ -7,10 +7,12 @@ public class EmployeeWageComputation
         	int IS_FULL_TIME=1;
              	int WAGE_PER_HOUR=20;
              	int FULL_DAY_HOUR=8;
+		int WORKING_DAYS=20;
              	int dailyWage=0;
              	int employee_hours=0;
              	int PART_TIME_HOUR=8;
              	double partTime=0;
+		int monthlyWage=0;
              	double empCheck=Math.floor(Math.random()*10)%2;
              	System.out.println("!.Employee Attendance 2.DailyWages 3.Part Time Wages Enter your choice:");
              	Scanner s1=new Scanner(System.in);
@@ -42,7 +44,11 @@ public class EmployeeWageComputation
              	default:
             	 	System.out.println("Wrong choice");
             	}
+		dailyWage=(employee_hours*WAGE_PER_HOUR);
+		monthlyWage=(WORKING_DAYS*dailyWage);
+		System.out.println("Monthly Wages:"+monthlyWage);
      	}
 
 }
+
 
