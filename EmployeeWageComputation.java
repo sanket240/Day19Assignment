@@ -1,4 +1,8 @@
-class CompanyEmpWage
+interface EmployeeWage
+{
+    void EmployeeMonthlyWage();
+}
+class CompanyEmpWage implements EmployeeWage
 {
 	int IS_FULL_TIME=1;
     	int WAGE_PER_HOUR=20;
