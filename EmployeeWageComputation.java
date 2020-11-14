@@ -17,10 +17,11 @@ class CompanyEmpWage implements EmployeeWage
         int days=0;
         int hours=0;
         int empHr=0;
+        int totalSalary=0;
         String name;
         int Workingdays;
         int Workinghours;
-   	 public CompanyEmpWage(String name,int Workingdays,int Workinghours)
+   	public CompanyEmpWage(String name,int Workingdays,int Workinghours)
     	{
         	this.name=name;
         	this.Workingdays=Workingdays;
@@ -35,11 +36,13 @@ class CompanyEmpWage implements EmployeeWage
         	this.Workingdays=Workingdays;
     	}
     	public void setWorkinghours(int Workinghours)
-    	{
+	{
         	this.Workinghours=Workinghours;
     	}
     	public void EmployeeMonthlyWage()
     	{
+    		System.out.println("For Company:"+name);
+	   	System.out.println("Daily wages     Total wages");
 		while(days<=Workingdays && empHr<=Workinghours)
                 {
                 	double empCheck1=Math.floor(Math.random()*10)%1;
@@ -57,19 +60,21 @@ class CompanyEmpWage implements EmployeeWage
                         }
                         days++;
                         dailyWage=(empHr*WAGE_PER_HOUR);
+                        totalSalary=(totalSalary+dailyWage);
+                        System.out.println(dailyWage+"                  "+totalSalary+" ");
                 }
                 total_Monthly_Wage=Workinghours*WAGE_PER_HOUR;
-               	System.out.println("Total Employee Wage for company is:"+name+"is:"+total_Monthly_Wage); 
+               	System.out.println("Total Employee Wage for company "+name+":"+totalSalary); 
     	}
 }
-public class EmployeeWageComputation
+public class EmployeeWageComputation 
 {
 	public static void main(String args[]) 
     	{
       		ArrayList<String> CompanyEmpWage=new ArrayList<String>();
       		CompanyEmpWage c1=new CompanyEmpWage("Atos",20,120);
       		CompanyEmpWage c2=new CompanyEmpWage("Silverlink",20,200);
-      		CompanyEmpWage c3=new CompanyEmpWage("TCS",20,220);
+		CompanyEmpWage c3=new CompanyEmpWage("TCS",20,220);
       		ArrayList<CompanyEmpWage> comp=new ArrayList<CompanyEmpWage>();
     		comp.add(c1);
     		c1.EmployeeMonthlyWage();
