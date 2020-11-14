@@ -1,4 +1,4 @@
-public class  EmployeeWageComputation
+class CompanyEmpWage
 {
 	int IS_FULL_TIME=1;
     	int WAGE_PER_HOUR=20;
@@ -15,15 +15,27 @@ public class  EmployeeWageComputation
         String name;
         int Workingdays;
         int Workinghours;
-    	public  EmployeeWageComputation(String name,int Workingdays,int Workinghours)
+   	 public CompanyEmpWage(String name,int Workingdays,int Workinghours)
     	{
         	this.name=name;
         	this.Workingdays=Workingdays;
         	this.Workinghours=Workinghours;
     	}
-	public void EmployeeMonthlyWage()
+    	public void setName(String name)
     	{
-        	while(days<=Workingdays && empHr<=Workinghours)
+        	this.name=name;
+    	}
+    		public void setWorkingdays(int Workingdays)
+    	{
+        	this.Workingdays=Workingdays;
+    	}
+    	public void setWorkinghours(int Workinghours)
+    	{
+        	this.Workinghours=Workinghours;
+    	}
+    	public void EmployeeMonthlyWage()
+    	{
+		while(days<=Workingdays && empHr<=Workinghours)
                 {
                 	double empCheck1=Math.floor(Math.random()*10)%1;
                         int empCheck2=(int)empCheck1;
@@ -42,21 +54,21 @@ public class  EmployeeWageComputation
                         dailyWage=(empHr*WAGE_PER_HOUR);
                 }
                 total_Monthly_Wage=Workinghours*WAGE_PER_HOUR;
+               	System.out.println("Total Employee Wage for company is:"+name+"is:"+total_Monthly_Wage); 
     	}
-    	public String toString()
+}
+public class EmployeeWageComputation
+{
+	public static void main(String args[]) 
     	{
-        	return "Total Employee Wage for company is:"+name+"is:"+total_Monthly_Wage;
-    	}
-	public static void main(String args[])
-	{
-     		EmployeeWageComputation emp=new EmployeeWageComputation("Atos",20,500);
-     		EmployeeWageComputation emp1=new EmployeeWageComputation("Silverlink",20,450);
-     		EmployeeWageComputation emp2=new EmployeeWageComputation("TCS",20,600);
-     		emp.EmployeeMonthlyWage();
-     		System.out.println(emp);
-     		emp1.EmployeeMonthlyWage();
-     		System.out.println(emp1);
-     		emp2.EmployeeMonthlyWage();
-     		System.out.println(emp2);
+      		CompanyEmpWage c1[]=new CompanyEmpWage[3];
+      		c1[0]=new CompanyEmpWage("Atos",20,120);
+      		c1[1]=new CompanyEmpWage("Silverlink",20,200);
+      		c1[2]=new CompanyEmpWage("TCS",20,220);
+    		for(int i=0;i<c1.length;i++)
+    		{
+        		c1[i].EmployeeMonthlyWage();
+        		System.out.println("  ");
+		}
     	}
 }
