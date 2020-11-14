@@ -1,3 +1,4 @@
+import java.util.*;
 interface EmployeeWage
 {
     void EmployeeMonthlyWage();
@@ -65,14 +66,16 @@ public class EmployeeWageComputation
 {
 	public static void main(String args[]) 
     	{
-      		CompanyEmpWage c1[]=new CompanyEmpWage[3];
-      		c1[0]=new CompanyEmpWage("Atos",20,120);
-      		c1[1]=new CompanyEmpWage("Silverlink",20,200);
-      		c1[2]=new CompanyEmpWage("TCS",20,220);
-    		for(int i=0;i<c1.length;i++)
-    		{
-        		c1[i].EmployeeMonthlyWage();
-        		System.out.println("  ");
-		}
+      		ArrayList<String> CompanyEmpWage=new ArrayList<String>();
+      		CompanyEmpWage c1=new CompanyEmpWage("Atos",20,120);
+      		CompanyEmpWage c2=new CompanyEmpWage("Silverlink",20,200);
+      		CompanyEmpWage c3=new CompanyEmpWage("TCS",20,220);
+      		ArrayList<CompanyEmpWage> comp=new ArrayList<CompanyEmpWage>();
+    		comp.add(c1);
+    		c1.EmployeeMonthlyWage();
+    		comp.add(c2);
+    		c2.EmployeeMonthlyWage();
+    		comp.add(c3);
+    		c3.EmployeeMonthlyWage();
     	}
 }
